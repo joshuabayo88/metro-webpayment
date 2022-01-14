@@ -45,49 +45,85 @@ function App() {
   // console.log(user.email);
 
   return (
-    <div
-      className="min-h-screen flex items-center 
-    justify-center bg-gradient-to-tr from-[#7DA2B4] to-[#0C2B50]
-     flex-col"
-    >
-      <h1 className="text-orange-700 font-semibold text-3xl animate-bounce">
-        Flutter Payment
-      </h1>
-      <form className="flex flex-col">
-        <input
-          className=" my-3 rounded-md transition duration-500 shadow-md 
-          hover:shadow-gray-500 px-2 w-full outline-none text-gray-500 text-2xl"
-          type="text"
-          placeholder="Name"
-          name="name"
-          required
-          // value={user.email}
-          // onChange={handleChange}
+    <div>
+      <header className="py-2 h-17 bg-gradient-to-tr from-[#d7e1ec] to-[#ffffff] sticky top-0">
+        <img
+          src="metrologobg.png"
+          alt="Metro Logo"
+          className="animate-bounce h-12"
         />
-        <input
-          className=" my-3 rounded-md transition duration-500 shadow-md 
+      </header>
+      <div
+        className="min-h-screen flex items-center 
+    justify-center flex-col bg-[url('https://cdn.pixabay.com/photo/2017/02/17/08/11/family-2073604_960_720.png')] bg-no-repeat
+     bg-center bg-[#8696a7]"
+      >
+        {/* <h1 className="text-[#2f627a] font-semibold text-3xl animate-bounce">
+          Metro Pay
+        </h1> */}
+
+        <form className="flex flex-col md:h-20">
+          <input
+            className=" my-3 rounded-md transition duration-500 shadow-md 
+          hover:shadow-gray-500 px-2 w-max outline-none text-gray-500 text-2xl"
+            type="text"
+            placeholder="Name"
+            name="name"
+            required
+            // value={user.email}
+            // onChange={handleChange}
+          />
+          <input
+            className=" my-3 rounded-md transition duration-500 shadow-md 
+          hover:shadow-gray-500 px-2 outline-none w-96 text-gray-500 text-2xl"
+            type="email"
+            placeholder="Email"
+            name="email"
+            required
+            // value={user.email}
+            // onChange={handleChange}
+          />
+
+          <input
+            className=" my-3 rounded-md transition duration-500 shadow-md 
           hover:shadow-gray-500 px-2 outline-none w-72 text-gray-500 text-2xl"
-          type="email"
-          placeholder="Email"
-          name="email"
-          // value={user.email}
-          // onChange={handleChange}
-        />
-        <button
-          className="bg-orange-800 rounded-md px-2"
-          onClick={() => {
-            handleFlutterPayment({
-              callback: (response) => {
-                console.log(response);
-                closePaymentModal(); // this will close the modal programmatically
-              },
-              onClose: () => {},
-            });
-          }}
-        >
-          Pay Now
-        </button>
-      </form>
+            type="text"
+            placeholder="Age"
+            name="age"
+            required
+            // value={user.email}
+            // onChange={handleChange}
+          />
+
+          <input
+            className=" my-3 rounded-md transition duration-500 shadow-md 
+          hover:shadow-gray-500 px-2 outline-none w-72 text-gray-500 text-2xl"
+            type="text"
+            placeholder="Address"
+            name="address"
+            required
+            // value={user.email}
+            // onChange={handleChange}
+          />
+
+          <button
+            className="bg-[#2f627a] rounded-md px-2 text-gray-200 text-xl w-40
+             hover:scale-105 transition duration-300"
+            type="submit"
+            onClick={() => {
+              handleFlutterPayment({
+                callback: (response) => {
+                  console.log(response);
+                  closePaymentModal(); // this will close the modal programmatically
+                },
+                onClose: () => {},
+              });
+            }}
+          >
+            Register
+          </button>
+        </form>
+      </div>
     </div>
   );
 }
